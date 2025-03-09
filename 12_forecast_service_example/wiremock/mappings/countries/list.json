@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/countries",
+    "headers": {
+      "X-Api-Key": {
+        "equalTo": "my-secret-api-key"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "items": [
+        {
+          "name": "UK"
+        },
+        {
+          "name": "Canada"
+        }
+      ]
+    }
+  }
+}

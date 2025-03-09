@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/cities/3",
+    "headers": {
+      "X-Api-Key": {
+        "equalTo": "my-secret-api-key"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2500,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "name": "Vancouver",
+      "country": "Canada",
+      "temperature_c": 7
+    }
+  }
+}

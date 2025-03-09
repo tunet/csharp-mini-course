@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/cities",
+    "headers": {
+      "X-Api-Key": {
+        "equalTo": "my-secret-api-key"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2500,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "items": [
+        {
+          "id": 1,
+          "name": "Ottawa",
+          "country": "Canada"
+        },
+        {
+          "id": 2,
+          "name": "Toronto",
+          "country": "Canada"
+        },
+        {
+          "id": 3,
+          "name": "Vancouver",
+          "country": "Canada"
+        },
+        {
+          "id": 4,
+          "name": "London",
+          "country": "UK"
+        },
+        {
+          "id": 5,
+          "name": "Toronto",
+          "country": "UK"
+        }
+      ]
+    }
+  }
+}

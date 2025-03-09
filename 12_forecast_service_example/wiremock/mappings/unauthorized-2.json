@@ -1,0 +1,21 @@
+{
+  "priority": 11,
+  "request": {
+    "method": "ANY",
+    "urlPattern": ".*",
+    "headers": {
+      "X-Api-Key": {
+        "doesNotMatch": "my-secret-api-key"
+      }
+    }
+  },
+  "response": {
+    "status": 401,
+    "jsonBody": {
+      "error": "Invalid API key"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

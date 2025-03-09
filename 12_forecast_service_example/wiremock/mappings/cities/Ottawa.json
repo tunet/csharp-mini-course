@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/cities/1",
+    "headers": {
+      "X-Api-Key": {
+        "equalTo": "my-secret-api-key"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2500,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "name": "Ottawa",
+      "country": "Canada",
+      "temperature_c": -5
+    }
+  }
+}
