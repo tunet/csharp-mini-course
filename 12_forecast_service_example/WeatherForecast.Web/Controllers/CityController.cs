@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WeatherForecast.Application.Models;
 using WeatherForecast.Application.Services.Interfaces;
 
 namespace WeatherForecast.Web.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/countries/{countryName}/cities")]
 public class CityController(IWeatherForecastService weatherForecastService) : ControllerBase
