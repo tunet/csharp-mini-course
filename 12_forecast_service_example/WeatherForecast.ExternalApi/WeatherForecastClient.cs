@@ -1,8 +1,9 @@
 using System.Text.Json;
-using WeatherForecastApi.Models;
 using Microsoft.Extensions.Options;
+using WeatherForecast.Common.Exceptions;
+using WeatherForecast.ExternalApi.Models;
 
-namespace WeatherForecastApi;
+namespace WeatherForecast.ExternalApi;
 
 public class WeatherForecastClient : IWeatherForecastClient
 {
@@ -45,13 +46,10 @@ public class WeatherForecastClient : IWeatherForecastClient
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new Exception(
-                $"""
-                 Error: {response.ReasonPhrase},
-                 Status code: {response.StatusCode},
-                 Content: {content}
-                 """
-            );
+            var error =
+                $"Reason phrase: {response.ReasonPhrase}, Status code: {response.StatusCode}, Content: {content}";
+
+            throw new ApiException(response.StatusCode, content, error);
         }
 
         return JsonSerializer.Deserialize<T>(content) ?? throw new Exception("Failed to deserialize response");

@@ -1,15 +1,15 @@
 using System.Text.Json.Serialization;
 
-namespace WeatherForecastApi.Models;
+namespace WeatherForecast.ExternalApi.Models;
 
-public record CityItem
+public record City
 {
-    [JsonPropertyName("id")]
-    public int Id { get; init; }
-
     [JsonPropertyName("name")]
     public string Name { get; init; }
 
     [JsonPropertyName("country")]
     public string Country { get; init; }
+
+    [JsonPropertyName("temperature_c")]
+    public int TemperatureC { get; init; }
 }

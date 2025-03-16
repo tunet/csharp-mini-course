@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace WeatherForecastApi.Models;
+namespace WeatherForecast.ExternalApi.Models;
 
 public record CountryItem
 {

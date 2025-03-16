@@ -1,6 +1,8 @@
+using System.Net;
 using WeatherForecast.Application.Models;
 using WeatherForecast.Application.Services.Interfaces;
-using WeatherForecastApi;
+using WeatherForecast.Common.Exceptions;
+using WeatherForecast.ExternalApi;
 
 namespace WeatherForecast.Application.Services;
 
@@ -46,7 +48,11 @@ public class WeatherForecastService(IWeatherForecastClient weatherForecastClient
     public async Task<City> GetCity(string countryName, string cityName)
     {
         var response = await weatherForecastClient.GetCityList();
-        var cityItem = response.Items.First(c => c.Country == countryName && c.Name == cityName);
+
+        var cityItem = response.Items
+            .FirstOrDefault(c => c.Country == countryName && c.Name == cityName)
+            ?? throw new AppException(HttpStatusCode.NotFound, "City not found");
+
         var city = await weatherForecastClient.GetCity(cityItem.Id);
 
         return new City { Name = city.Name, Country = countryName, TemperatureC = city.TemperatureC };

@@ -1,4 +1,4 @@
-namespace WeatherForecastApi;
+namespace WeatherForecast.ExternalApi;
 
 public record WeatherForecastConfig
 {

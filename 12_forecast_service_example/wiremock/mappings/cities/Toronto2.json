@@ -9,7 +9,6 @@
     }
   },
   "response": {
-    "fixedDelayMilliseconds": 2500,
     "status": 200,
     "headers": {
       "Content-Type": "application/json"

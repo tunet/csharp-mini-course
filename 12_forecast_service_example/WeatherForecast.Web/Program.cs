@@ -1,6 +1,7 @@
 using WeatherForecast.Application.Services;
 using WeatherForecast.Application.Services.Interfaces;
-using WeatherForecastApi;
+using WeatherForecast.ExternalApi;
+using WeatherForecast.Web.Framework.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,8 @@ builder.Services.AddHttpClient<IWeatherForecastClient, WeatherForecastClient>();
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

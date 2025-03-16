@@ -1,6 +1,6 @@
-using WeatherForecastApi.Models;
+using WeatherForecast.ExternalApi.Models;
 
-namespace WeatherForecastApi;
+namespace WeatherForecast.ExternalApi;
 
 public interface IWeatherForecastClient
 {
