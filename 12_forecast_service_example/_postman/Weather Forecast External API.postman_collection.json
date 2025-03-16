@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "0c95dd41-10b2-4518-ac00-e201129b5b9c",
+		"name": "Weather Forecast External API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11410939"
+	},
+	"item": [
+		{
+			"name": "Get Country List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "my-secret-api-key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "my-secret-api-key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/countries/UK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"countries",
+						"UK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get City List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "my-secret-api-key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get City",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "my-secret-api-key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/cities/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"cities",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

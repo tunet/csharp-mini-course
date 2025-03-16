@@ -19,7 +19,6 @@ public class CountryController(IWeatherForecastService weatherForecastService) :
         return Ok(response);
     }
 
-    [Authorize(Roles = "NotExistingRole")]
     [HttpGet("{countryName}")]
     [ProducesResponseType(typeof(Country), StatusCodes.Status200OK)]
     public async Task<IActionResult> Get([FromRoute] string countryName)

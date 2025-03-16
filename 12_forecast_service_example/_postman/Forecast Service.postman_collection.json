@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "01cd9e9a-ac0d-4415-9b82-0296b0afc72b",
+		"name": "Forecast Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11410939"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7282/api/auth",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7282",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Country List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7282/api/countries",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7282",
+					"path": [
+						"api",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7282/api/countries/UK",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7282",
+					"path": [
+						"api",
+						"countries",
+						"UK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get City List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7282/api/countries/UK/cities",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7282",
+					"path": [
+						"api",
+						"countries",
+						"UK",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7282/api/countries/UK/cities/London",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7282",
+					"path": [
+						"api",
+						"countries",
+						"UK",
+						"cities",
+						"London"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
