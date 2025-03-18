@@ -10,18 +10,18 @@ public class CountryController(IWeatherForecastService weatherForecastService) :
 {
     [HttpGet]
     [ProducesResponseType(typeof(List<CountryItem>), StatusCodes.Status200OK)]
-    public IActionResult GetList()
+    public async Task<IActionResult> GetList()
     {
-        var response = weatherForecastService.GetCountryList();
+        var response = await weatherForecastService.GetCountryList();
 
         return Ok(response);
     }
 
     [HttpGet("{countryName}")]
     [ProducesResponseType(typeof(Country), StatusCodes.Status200OK)]
-    public IActionResult Get([FromRoute] string countryName)
+    public async Task<IActionResult> Get([FromRoute] string countryName)
     {
-        var response = weatherForecastService.GetCountry(countryName);
+        var response = await weatherForecastService.GetCountry(countryName);
 
         return Ok(response);
     }
