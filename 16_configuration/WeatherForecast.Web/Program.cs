@@ -1,6 +1,5 @@
 using WeatherForecast.Application.Services;
 using WeatherForecast.Application.Services.Interfaces;
-using WeatherForecast.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
-
-builder.Services.Configure<TestConfig>(
-    builder.Configuration.GetSection("TestConfig")
-);
 
 var app = builder.Build();
 
