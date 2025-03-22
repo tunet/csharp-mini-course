@@ -1,12 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using WeatherForecast.Application.Services.Interfaces;
 
 namespace WeatherForecast.Web.Controllers;
 
 [ApiController]
 [Route("api/countries")]
-public class CountryController(IWeatherForecastService weatherForecastService) : ControllerBase
+public class CountryController(
+    IWeatherForecastService weatherForecastService,
+    IOptions<TestConfig> testConfig
+) : ControllerBase
 {
+    private TestConfig Config { get; } = testConfig.Value;
+
     [HttpGet]
     public IActionResult GetList()
     {
@@ -21,5 +27,12 @@ public class CountryController(IWeatherForecastService weatherForecastService) :
         var response = weatherForecastService.GetCountry(countryName);
 
         return Ok(response);
+    }
+
+    [HttpGet("config")]
+    [ProducesResponseType(typeof(TestConfig), StatusCodes.Status200OK, "application/json")]
+    public IActionResult GetConfig()
+    {
+        return Ok(Config);
     }
 }
