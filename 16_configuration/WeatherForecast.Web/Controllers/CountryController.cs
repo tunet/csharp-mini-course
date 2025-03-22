@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using WeatherForecast.Application.Models;
 using WeatherForecast.Application.Services.Interfaces;
 
 namespace WeatherForecast.Web.Controllers;
@@ -9,7 +8,6 @@ namespace WeatherForecast.Web.Controllers;
 public class CountryController(IWeatherForecastService weatherForecastService) : ControllerBase
 {
     [HttpGet]
-    [ProducesResponseType(typeof(List<CountryItem>), StatusCodes.Status200OK)]
     public IActionResult GetList()
     {
         var response = weatherForecastService.GetCountryList();
@@ -18,7 +16,6 @@ public class CountryController(IWeatherForecastService weatherForecastService) :
     }
 
     [HttpGet("{countryName}")]
-    [ProducesResponseType(typeof(Country), StatusCodes.Status200OK)]
     public IActionResult Get([FromRoute] string countryName)
     {
         var response = weatherForecastService.GetCountry(countryName);
