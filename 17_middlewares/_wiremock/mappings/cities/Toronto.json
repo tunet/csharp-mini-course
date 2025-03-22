@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/cities/2",
+    "headers": {
+      "X-Api-Key": {
+        "equalTo": "my-secret-api-key"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 2,
+      "name": "Toronto",
+      "country": "Canada",
+      "temperature_c": 10
+    }
+  }
+}
