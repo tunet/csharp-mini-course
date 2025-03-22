@@ -8,17 +8,17 @@ namespace WeatherForecast.Web.Controllers;
 public class CountryController(IWeatherForecastService weatherForecastService) : ControllerBase
 {
     [HttpGet]
-    public IActionResult GetList()
+    public async Task<IActionResult> GetList()
     {
-        var response = weatherForecastService.GetCountryList();
+        var response = await weatherForecastService.GetCountryList();
 
         return Ok(response);
     }
 
     [HttpGet("{countryName}")]
-    public IActionResult Get([FromRoute] string countryName)
+    public async Task<IActionResult> Get([FromRoute] string countryName)
     {
-        var response = weatherForecastService.GetCountry(countryName);
+        var response = await weatherForecastService.GetCountry(countryName);
 
         return Ok(response);
     }
